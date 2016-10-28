@@ -1,0 +1,61 @@
+<!--
+  Generated template for the About page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>About</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="login">
+  <ion-item-group>
+    <ion-item-divider light>INFORMATION</ion-item-divider>
+    <ion-item>
+      <span class="nw-left">Version</span>
+      <span class="nw-right">0.0.1</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider light>GET IN TOUCH</ion-item-divider>
+    <ion-item>
+      <span class="nw-left">Website</span>
+      <span class="nw-right">test.com</span>
+    </ion-item>
+    <ion-item>
+      <span class="nw-left">Facebook</span>
+      <span class="nw-right">test</span>
+    </ion-item>
+    <ion-item>
+      <span class="nw-left">Google</span>
+      <span class="nw-right">test</span>
+    </ion-item>
+    <ion-item>
+      <span class="nw-left">Twitter</span>
+      <span class="nw-right">test</span>
+    </ion-item>
+    <ion-item>
+      <span class="nw-left">Instagram</span>
+      <span class="nw-right">test</span>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider light>HELP</ion-item-divider>
+    <ion-item (click)="goTermPage()" class="nw-pointer">
+      <span class="nw-left">Terms of use</span>
+      <span class="nw-right"><ion-icon name="md-arrow-forward"></ion-icon></span>
+    </ion-item>
+    <ion-item (click)="goAckPage()" class="nw-pointer">
+      <span class="nw-left">Acknowledgements</span>
+      <span class="nw-right"><ion-icon name="md-arrow-forward"></ion-icon></span>
+    </ion-item>
+    <ion-item (click)="goWebsiteUrl()" class="nw-pointer">
+      <span class="nw-left">Deactivate subscription</span>
+      <span class="nw-right"><ion-icon name="md-arrow-forward"></ion-icon></span>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

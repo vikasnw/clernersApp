@@ -1,0 +1,38 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="login">
+  <div class="center">
+    <img src="assets/images/logo.jpg" alt="Cleaning App Logo" />
+  </div>
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+    <ion-item [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)">
+      <ion-label floating>Email</ion-label>
+      <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  && (emailChanged || submitAttempt)">
+      <p>Please enter a valid email.</p>
+    </ion-item>
+    <ion-item [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)">
+      <ion-label floating>Password</ion-label>
+      <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  && (passwordChanged || submitAttempt)">
+      <p>Please enter password.</p>
+    </ion-item>
+    <div padding>
+      <button ion-button block type="submit">Log In</button>
+    </div>
+  </form>
+  <div padding class="btn-link">
+    <button ion-button color="" block  clear (click)="goToResetPassword()">Forgot Password ?</button>
+  </div>
+</ion-content>

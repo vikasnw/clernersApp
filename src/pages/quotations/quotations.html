@@ -1,0 +1,52 @@
+<!--
+  Generated template for the Quotations page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Quotations</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-fab right bottom>
+    <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-list>
+    <ion-item-divider light>
+      <ion-grid>
+        <ion-row>
+          <ion-col width-33>Id</ion-col>
+          <ion-col width-33>Company</ion-col>
+          <ion-col width-33>Status</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item-divider>
+    <ion-item-sliding *ngFor="let q of quotations; let i = index;">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col width-33>{{q.id}}</ion-col>
+            <ion-col width-33>{{q.companyName}}</ion-col>
+            <ion-col width-33>{{q.status}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item-options side="left">
+        <div *ngFor="let s of status">
+          <button ion-button  color="{{s.color}}" (click)="updateStatus(q,s.name)"  *ngIf="s.name != q.status">{{s.name}}</button>
+        </div>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button ion-button color="primary">Invoice</button>
+        <button ion-button color="secondary">Edit</button>
+        <button ion-button color="danger" (click)="deleteQuot(q)" >Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+

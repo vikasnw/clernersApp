@@ -1,0 +1,17 @@
+<ion-menu [content]="content">
+  <ion-content>
+    <ion-list>
+      <div class="profile-image">
+        <img [src]="profileImage" *ngIf="profileImage" (click)="changeProfilePhoto()"/>
+      </div>
+      <div class="profile-name">
+          <h4>{{this.userInfo.first_name}} {{this.userInfo.last_name}}</h4>
+      </div>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon ios="{{p.name_ios}}" md="{{p.name_md}}"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

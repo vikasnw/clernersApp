@@ -1,0 +1,71 @@
+<!--
+  Generated template for the MyAccount page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Account</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="my-account">
+  <form [formGroup]="accountForm" (submit)="saveAccount()" novalidate >
+    <ion-item [class.invalid]="!accountForm.controls.firstName.valid && (firsNameChanged || submitAttempt)">
+      <ion-label floating>First Name</ion-label>
+      <ion-input #firstName formControlName="firstName" type="text" (change)="elementChanged(firstName)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!accountForm.controls.firstName.valid  && (firsNameChanged || submitAttempt)">
+      <p>Please enter a first name.</p>
+    </ion-item>
+    <ion-item [class.invalid]="!accountForm.controls.lastName.valid && (lastNameChanged || submitAttempt)">
+      <ion-label floating>Last Name</ion-label>
+      <ion-input #lastName formControlName="lastName" type="text" (change)="elementChanged(lastName)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!accountForm.controls.lastName.valid  && (lastNameChanged || submitAttempt)">
+      <p>Please enter a last name.</p>
+    </ion-item>
+    <ion-item [class.invalid]="!accountForm.controls.company.valid && (companyChanged || submitAttempt)">
+      <ion-label floating>Company</ion-label>
+      <ion-input #company formControlName="company" type="text" (change)="elementChanged(company)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!accountForm.controls.company.valid  && (companyChanged || submitAttempt)">
+      <p>Please enter a company.</p>
+    </ion-item>
+    <ion-item [class.invalid]="!accountForm.controls.phone.valid && (phoneChanged || submitAttempt)">
+      <ion-label floating>Phone</ion-label>
+      <ion-input #phone formControlName="phone" type="text" (change)="elementChanged(phone)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!accountForm.controls.phone.valid  && (phoneChanged || submitAttempt)">
+      <p>Please enter a phone.</p>
+    </ion-item>
+    <ion-item [class.invalid]="!accountForm.controls.gender.valid && (genderChanged || submitAttempt)">
+      <ion-label floating>Gender</ion-label>
+
+      <ion-select #gender formControlName="gender" (change)="elementChanged(gender)">
+        <ion-option value="male" checked="true">Male</ion-option>
+        <ion-option value="female">Female</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!accountForm.controls.gender.valid  && (genderChanged || submitAttempt)">
+      <p>Please select gender.</p>
+    </ion-item>
+    <ion-item [class.invalid]="!accountForm.controls.dob.valid && (dobChanged || submitAttempt)">
+      <ion-label floating>DOB</ion-label>
+      <ion-datetime #dob formControlName="dob" displayFormat="MM/DD/YYYY" (change)="elementChanged(dob)"></ion-datetime>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!accountForm.controls.dob.valid  && (dobChanged || submitAttempt)">
+      <p>Please enter date of birth.</p>
+    </ion-item>
+    <div padding>
+      <button ion-button block>Update</button>
+    </div>
+  </form>
+  <div padding class="btn-link">
+    <button ion-button color="" block  type="button" clear (click)="resetPassword()">Change Password</button>
+  </div>
+</ion-content>
